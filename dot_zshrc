@@ -2,7 +2,7 @@
 export PATH=$HOME/.mix/escripts:/opt/homebrew/opt/openjdk/bin:/usr/local/texlive/2021basic/bin/universal-darwin/:/usr/local/bin/flutter/bin:$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/anuvratparashar/.oh-my-zsh"
+export ZSH="/Users/anuvrat/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
