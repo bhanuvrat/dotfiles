@@ -37,6 +37,7 @@
       pkgs.tree
       pkgs.asdf
       pkgs.chezmoi
+      pkgs.mosh
 ];
 
   # Use a custom configuration.nix location.
