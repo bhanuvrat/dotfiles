@@ -8,7 +8,8 @@
       pkgs.htop
       pkgs.git-annex
       pkgs.git
-      pkgs.emacs    # Emacs 27.2
+      #pkgs.emacs    # Emacs 27.2
+      pkgs.emacs29
       pkgs.ripgrep
       # optional dependencies
       pkgs.coreutils # basic GNU utilities

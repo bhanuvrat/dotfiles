@@ -48,10 +48,12 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-
+;
+(package! org :pin "5890ac")
 (package! org-roam)
-;;(package! emacsql-sqlite-builtin)
+(package! emacsql-sqlite-builtin)
 (package! org-roam-ui)
 (package! emacsql-sqlite)
 (package! ag)
+;;(package! sqlite)
 (package! org-contacts)

@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-;; (setq user-full-name "John Doe"
-;;       user-mail-address "john@doe.com")
+(setq user-full-name "Anuvrat Parsahar"
+      user-mail-address "anuvrat@essentia.dev")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -41,6 +41,9 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+
+;;(setq org-contact-files (list org-directory))
+;; (setq org-agenda-files "~/org/" "~/org/org-roam")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -150,10 +153,45 @@
 ;;   )
 
 ;; org-roam
-(use-package! org-roam
-  :custom
-  (org-roam-directory "~/org/org-roam")
-  :config
-  (org-roam-db-autosync-enable))
+;; (use-package! org-roam
+;;   :custom
+;;   (org-roam-directory "~/org/org-roam")
+;;   :config
+;;   (org-roam-db-autosync-enable))
 
-(use-package! org-contacts)
+(use-package! org-contacts
+  :custom
+  org-contacts-files (list "/Users/anuvrat/org/contacts.org")
+)
+
+(setq global-page-break-lines-mode 0)
+
+(use-package org-roam
+  :diminish
+  :bind (("C-c n a" . org-id-get-create)
+         ("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n c" . org-roam-capture)
+         ("C-c n j" . org-roam-dailies-capture-today)
+         ("C-c n r" . org-roam-ref-find)
+         ("C-c n R" . org-roam-ref-add)
+         ("C-c n s" . org-roam-db-sync))
+  :custom
+  (org-roam-database-connector 'sqlite-builtin)
+  :init
+  (setq org-roam-directory (file-truename "~/org/")
+        org-roam-db-location "~/org/org-roam.db"
+        org-roam-db-gc-threshold most-positive-fixnum
+        org-roam-v2-ack t)
+  (unless (file-exists-p org-roam-directory)
+    (make-directory org-roam-directory t))
+  :config
+  (org-roam-db-autosync-enable)
+  (add-to-list 'display-buffer-alist
+               '("\\*org-roam\\*"
+                 (display-buffer-in-direction)
+                 (direction . right)
+                 (window-width . 0.33)
+                 (window-height . fit-window-to-buffer))))
