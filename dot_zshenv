@@ -1,2 +1,1 @@
-. "$HOME/.cargo/env"
-export PATH=$HOME/.asdf/installs/elixir/1.14.4/.mix/escripts/:$HOME/.emacs.d/.local/straight/build-28.2/emacsql-sqlite/sqlite:$HOME/.nix-profile/bin/:$HOME/.asdf/shims/:$HOME/.mix/escripts:/opt/homebrew/opt/openjdk/bin:/usr/local/texlive/2021basic/bin/universal-darwin/:/usr/local/bin/flutter/bin:$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=:$HOME/.emacs.d/.local/straight/build-28.2/emacsql-sqlite/sqlite:$HOME/.nix-profile/bin/:$HOME/.mix/escripts:/opt/homebrew/opt/openjdk/bin:/usr/local/texlive/2021basic/bin/universal-darwin/:/usr/local/bin/flutter/bin:$HOME/.cargo/bin:$HOME/bin:/usr/local/bin:$PATH
