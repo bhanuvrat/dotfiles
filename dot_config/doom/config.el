@@ -160,8 +160,8 @@
 ;;   (org-roam-db-autosync-enable))
 
 (use-package! org-contacts
-  :custom
-  org-contacts-files (list "/Users/anuvrat/org/contacts.org")
+  ;;:custom
+  ;;org-contacts-files (list "/Users/anuvrat/org/contacts.org")
 )
 
 (setq global-page-break-lines-mode 0)
@@ -195,3 +195,10 @@
                  (direction . right)
                  (window-width . 0.33)
                  (window-height . fit-window-to-buffer))))
+
+(after! org
+  (add-to-list 'org-capture-templates
+             '("d" "Dream" entry
+               (file+headline +org-capture-todo-file "Dream")
+               "* TODO %?\n :PROPERTIES:\n :CATEGORY: dream\n :END:\n %i\n"
+               :prepend t :kill-buffer t)))
